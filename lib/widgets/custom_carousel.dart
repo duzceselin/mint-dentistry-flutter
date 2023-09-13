@@ -29,7 +29,7 @@ class _AnimatedCarousel extends State<AnimatedCarousel> {
         CarouselSlider(
           carouselController: _controller,
           options: CarouselOptions(
-            height: widget.height ?? MediaQuery.of(context).size.height * 0.64,
+            height: widget.height ?? MediaQuery.of(context).size.height * 0.6,
             aspectRatio: 16 / 9,
             viewportFraction: 1,
             initialPage: 0,
