@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mint_dentistry/config/color_constants.dart';
 
+// Carousel without autoscroll for images
 class Carousel extends StatefulWidget {
   final List<String> carouselImages;
 
@@ -22,7 +24,7 @@ class _CarouselState extends State<Carousel> {
   void initState() {
     super.initState();
     _pageController = PageController(
-      viewportFraction: 0.8,
+      viewportFraction: 1,
       initialPage: 1,
     );
   }
@@ -33,7 +35,7 @@ class _CarouselState extends State<Carousel> {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height * 0.6,
           child: PageView.builder(
             itemCount: widget.carouselImages.length,
             pageSnapping: true,
@@ -49,8 +51,16 @@ class _CarouselState extends State<Carousel> {
                 widget.carouselImages,
                 pagePosition,
                 active,
+                context,
               );
             },
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: indicators(
+            widget.carouselImages.length,
+            activePage,
           ),
         ),
       ],
@@ -58,47 +68,16 @@ class _CarouselState extends State<Carousel> {
   }
 }
 
-AnimatedContainer slider(
-  images,
-  pagePosition,
-  active,
-) {
-  double margin = active ? 10 : 20;
-
+AnimatedContainer slider(images, pagePosition, active, context) {
   return AnimatedContainer(
     duration: Duration(milliseconds: 500),
     curve: Curves.easeInOutCubic,
-    margin: EdgeInsets.all(margin),
     decoration: BoxDecoration(
       image: DecorationImage(
         image: AssetImage(
           images[pagePosition],
         ),
-      ),
-    ),
-  );
-}
-
-imageAnimation(
-  PageController animation,
-  images,
-  pagePosition,
-) {
-  return AnimatedBuilder(
-    animation: animation,
-    builder: (context, widget) {
-      print(pagePosition);
-
-      return SizedBox(
-        width: 200,
-        height: 200,
-        child: widget,
-      );
-    },
-    child: Container(
-      margin: EdgeInsets.all(10),
-      child: Image.asset(
-        images[pagePosition],
+        fit: BoxFit.fill,
       ),
     ),
   );
@@ -110,11 +89,16 @@ List<Widget> indicators(
 ) {
   return List<Widget>.generate(imagesLength, (index) {
     return Container(
-      margin: EdgeInsets.all(3),
-      width: 10,
-      height: 10,
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 3,
+      ),
+      width: 8,
+      height: 8,
       decoration: BoxDecoration(
-        color: currentIndex == index ? Colors.black : Colors.black26,
+        color: currentIndex == index
+            ? LightThemeColors.primary
+            : LightThemeColors.dot,
         shape: BoxShape.circle,
       ),
     );

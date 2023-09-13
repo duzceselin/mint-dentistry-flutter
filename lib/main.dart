@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mint_dentistry/config/color_constants.dart';
@@ -36,11 +37,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _router,
-      theme: ThemeData(
-        scaffoldBackgroundColor: LightThemeColors.background,
-      ),
-    );
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.dark,
+        child: MaterialApp.router(
+          routerConfig: _router,
+          theme: ThemeData(
+            scaffoldBackgroundColor: LightThemeColors.background,
+          ),
+        ));
   }
 }
