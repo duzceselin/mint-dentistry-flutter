@@ -4,6 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mint_dentistry/config/color_constants.dart';
 import 'package:mint_dentistry/screens/onboarding/onboarding_landing.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -38,12 +39,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.dark,
-        child: MaterialApp.router(
-          routerConfig: _router,
-          theme: ThemeData(
-            scaffoldBackgroundColor: LightThemeColors.background,
-          ),
-        ));
+      value: SystemUiOverlayStyle.dark,
+      child: MaterialApp.router(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        routerConfig: _router,
+        theme: ThemeData(
+          scaffoldBackgroundColor: LightThemeColors.background,
+        ),
+      ),
+    );
   }
 }

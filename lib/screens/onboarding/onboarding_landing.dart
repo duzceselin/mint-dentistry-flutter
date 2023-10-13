@@ -3,6 +3,7 @@ import 'package:mint_dentistry/config/color_constants.dart';
 import 'package:mint_dentistry/config/image_constants.dart';
 import 'package:mint_dentistry/widgets/custom_carousel.dart';
 import 'package:mint_dentistry/widgets/primary_round_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingLandingScreen extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _OnboardingLandingScreen extends State<OnboardingLandingScreen> {
                           bottom: 40,
                         ),
                         child: PrimaryRoundButton(
-                          title: 'Continue',
+                          title: AppLocalizations.of(context)!.continue_btn,
                           onPressed: () {},
                         ),
                       ),
@@ -52,7 +53,7 @@ class _OnboardingLandingScreen extends State<OnboardingLandingScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Have An Account?",
+                            AppLocalizations.of(context)!.haveAnAccount,
                             style: TextStyle(
                               fontFamily: 'HelveticaNeue',
                               fontWeight: FontWeight.w500,
@@ -63,7 +64,7 @@ class _OnboardingLandingScreen extends State<OnboardingLandingScreen> {
                           TextButton(
                             onPressed: () {},
                             child: Text(
-                              "Sign In",
+                              AppLocalizations.of(context)!.signIN,
                               style: TextStyle(
                                 fontFamily: 'HelveticaNeue',
                                 fontWeight: FontWeight.w500,
