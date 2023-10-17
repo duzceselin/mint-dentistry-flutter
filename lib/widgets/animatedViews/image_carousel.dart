@@ -68,7 +68,12 @@ class _CarouselState extends State<Carousel> {
   }
 }
 
-AnimatedContainer slider(images, pagePosition, active, context) {
+AnimatedContainer slider(
+  images,
+  pagePosition,
+  active,
+  context,
+) {
   return AnimatedContainer(
     duration: Duration(milliseconds: 500),
     curve: Curves.easeInOutCubic,

@@ -19,6 +19,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  flutter_hooks: ^0.20.3
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +39,7 @@ flutter:
     - assets/images/carousel/Onboarding1.png
     - assets/images/carousel/Onboarding2.png
     - assets/images/carousel/Onboarding3.png
+    - assets/images/icons/file.png
 
   fonts:
     - family: Didot

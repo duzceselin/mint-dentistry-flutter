@@ -1,5 +1,13 @@
 {
   "haveAnAccount": "Have An Account?",
   "signIN": "Sign In",
-  "continue_btn": "Continue"
+  "continueBtn": "Continue",
+  "companyPolicies": "Company Policies",
+  "welcome": "Welcome!",
+  "companyPolicyDescription": "Please read our company policies in the links below. If you agree, tap on “I Accept” to continue.",
+  "acceptBtn": "I Accept",
+  "declineBtn": "I Decline",
+  "termsOfService": "Terms Of Service",
+  "privacyPolicy": "Privacy Policy",
+  "rewardsPolicy": "Rewards Policy"
 }

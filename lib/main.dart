@@ -52,6 +52,19 @@ class MyApp extends StatelessWidget {
         routerConfig: _router,
         theme: ThemeData(
           scaffoldBackgroundColor: LightThemeColors.background,
+          appBarTheme: AppBarTheme(
+            titleTextStyle: TextStyle(
+              fontFamily: 'Didot',
+              fontWeight: FontWeight.w900,
+              fontSize: 24,
+              color: Colors.black,
+            ),
+            iconTheme: IconThemeData(
+              color: LightThemeColors.bodyDark,
+              size: 24,
+            ),
+            backgroundColor: LightThemeColors.statusBar,
+          ),
         ),
       ),
     );
