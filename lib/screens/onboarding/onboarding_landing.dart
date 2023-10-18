@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mint_dentistry/config/color_constants.dart';
 import 'package:mint_dentistry/config/image_constants.dart';
-import 'package:mint_dentistry/widgets/custom_carousel.dart';
-import 'package:mint_dentistry/widgets/primary_round_button.dart';
+import 'package:mint_dentistry/widgets/animatedViews/custom_carousel.dart';
+import 'package:mint_dentistry/widgets/buttons/primary_round_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingLandingScreen extends StatefulWidget {
@@ -18,6 +19,10 @@ class _OnboardingLandingScreen extends State<OnboardingLandingScreen> {
     AllImages().onboardingImage2,
     AllImages().onboardingImage3,
   ];
+
+  void onContinueTap(BuildContext context) {
+    context.go("/companyPolicies");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +50,10 @@ class _OnboardingLandingScreen extends State<OnboardingLandingScreen> {
                           bottom: 40,
                         ),
                         child: PrimaryRoundButton(
-                          title: AppLocalizations.of(context)!.continue_btn,
-                          onPressed: () {},
+                          title: AppLocalizations.of(context)!.continueBtn,
+                          onPressed: () {
+                            onContinueTap(context);
+                          },
                         ),
                       ),
                       Row(

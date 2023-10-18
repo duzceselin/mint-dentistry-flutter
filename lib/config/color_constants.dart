@@ -77,6 +77,7 @@ class LightThemeColors {
   static Color miscellaneous = ColorConstants.miscellaneous;
   static Color miscellaneousSecondary = ColorConstants.miscellaneousSecondary;
   static Color miscellaneousTertiary = ColorConstants.miscellaneousTertiary;
+  static Color statusBar = ColorConstants.onPrimary;
 }
 
 class DarkThemeColors {
@@ -114,4 +115,5 @@ class DarkThemeColors {
   static Color miscellaneous = ColorConstants.miscellaneous;
   static Color miscellaneousSecondary = ColorConstants.miscellaneousSecondary;
   static Color miscellaneousTertiary = ColorConstants.miscellaneousTertiary;
+  static Color statusBar = ColorConstants.onPrimary;
 }
